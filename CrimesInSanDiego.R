@@ -1,0 +1,126 @@
+#Project
+##TEAM NAME-Data Miners
+## VINAYAKA M HEGDE  : PES1201701600
+## AMRUTH KARNAM : PES1201700266
+## NAGESH K J : PES1201701528
+
+#packages that you will be using
+#Installation of  package lattice
+#install.packages(lattice)
+library(lattice)
+#Installation of  package ggplot2
+#install.packages(ggplot2)
+library(ggplot2)
+# path 
+path='/Users/amruth/pr/Project'
+#setting the current working directory to the path
+setwd(path)
+
+#reading the csv file
+dataset=read.csv("incidents-100k.csv")
+#Since all the values of id are missing , hence it is dropped.
+#month , hour and city are dropped.city since all values are same.
+dataset=dataset[-c(13)]
+dataset=dataset[-c(9)]
+dataset=dataset[-c(4)]
+dataset=dataset[-c(1)]
+#vector diffYears has all possible years
+diffYears=unique(dataset$year)
+#this vector is sorted in ascending order.
+theYears=sort(diffYears)
+#An Empty vector is declared.
+vector=c()
+#for each year, we calculate total number of crimes in that year.
+for(i in diffYears)
+{
+  #taking the subset of the dataset where each row correspond to that year.
+  subData=subset(dataset,year==i,c("type"))
+  #number of rows in that  subset.
+  numberOfRows=nrow(subData)
+  vector=c(vector,numberOfRows)
+}
+#Now barplot is plotted between years and number of crimes in that year.
+barplot(vector,
+        main = "Number of crimes each year",
+        xlab = "Years",
+        ylab = "Number of crimes",
+        names.arg =theYears,
+        col = "darkred",
+        ylim=c(0,20000),
+        horiz = FALSE
+)
+
+
+#vector diffCrimes has all possible crime types.
+diffCrimes=unique(dataset$type)
+#An Empty vector is declared.
+z=c()
+#for each type of crime,total number of crimes occured through that type.
+for(j in diffCrimes)
+{
+  #subset of the dataset where each row in this subset correspond to that specific type.
+  subsetOfData=subset(dataset,type==j,c("type"))
+  #number of rows in the subsetOfData.
+  numRows=nrow(subsetOfData)
+  z=c(z,numRows)
+}
+#Now barplot is plotted between type of crimes and number of crimes of that specific type.
+barplot(z,
+        main = "Number of crimes vs crime methods used",
+        xlab = "Type of crimes",
+        ylab = "Number of crimes",
+        names.arg =diffCrimes,
+        col = "darkred",
+        ylim=c(0,25000),
+        horiz = FALSE
+)
+
+#An Empty vector is declared.
+newVec=c()
+#vector dayOrNight has all possible crime types.(that it contains 0 and 1 in the vector)
+dayOrNight=unique(dataset$is_night)
+#we sort the vector so that value 0 is first and 1 is the second element in the array.
+dayOrNight=sort(dayOrNight)
+# we calcuate the number of crimes occuring during the day and night.
+for(k in dayOrNight)
+{
+  #subset of the dataset is taken where each row correspond to an crime committed during that time.
+  subsetdayOrNight=subset(dataset,is_night==k,c("is_night"))
+  #number of rows in subsetdayOrNight.
+  rowsDayOrNight=nrow(subsetdayOrNight)
+  newVec=c(newVec,rowsDayOrNight)
+}
+#pie chart is plotted , we calculate the percentage for both day and night are calculated and indicated.
+piepercent= round(100*newVec/sum(newVec), 1)
+piepercent=paste(piepercent, "%", sep="")
+pie(newVec,labels=as.character(piepercent),main="Crimes in DAY vs NIGHT",
+    col=c("red","green"),
+    border="black",
+    clockwise=TRUE)
+#legend is given for the graph.
+legend("topright", cex = 0.8, c("Day","Night"),fill=c("red","green"))
+
+
+#An Empty vector is declared.
+vecNeigh=c()
+#vector neigh has all possible neighbourhood values.
+neigh=unique(dataset$nbrhood)
+#for each neighbourhood, we calculate the number of crimes committed near that neighbourhood.
+for(it in neigh)
+{
+  #we take the subset of the data ,where each row correspond to that specific neighbourhood.
+  subsetNeigh=subset(dataset,nbrhood==it)
+  #number of rows in subsetNeigh.
+  numNeigh=nrow(subsetNeigh)
+  vecNeigh=c(vecNeigh,numNeigh)
+}
+#bar plot is plotted between number of crimes and neighbourhood.
+barplot(vecNeigh,
+        main = "Number of crimes vs neighbourhood",
+        xlab = "Neighbourhood",
+        ylab = "Number of crimes",
+        names.arg =neigh,
+        col = "darkred",
+        ylim=c(0,7000),
+        horiz = FALSE
+)
