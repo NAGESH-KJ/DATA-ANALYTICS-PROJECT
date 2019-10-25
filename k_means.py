@@ -15,7 +15,7 @@ import pandas as pd
 from matplotlib import pyplot as plt
 from sklearn.cluster import KMeans
 
-df = pd.read_csv('da_proj_dataset.csv')
+df = pd.read_csv('incidents-100k.csv')
 
 
 # In[3]:
