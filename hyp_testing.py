@@ -32,3 +32,7 @@ else:
   print("we fail to reject null hypothesis")
 #So we see that we fail to reject that more crimes take place in day than in night
 
+#We expect that more crimes take place during the night than in the day.
+#When a hypothesis testing was carried out to  check if  more crimes occur during the night time.
+#We see observe that the p value obtained is much greater than 0.05 and we fail to reject the null hypothesis , stating that  we can’t assume that more crimes  occur during the night time.
+#This is because a lot of crimes took place at 3 am and 4 am or very early in the  morning when people were still sleeping.
