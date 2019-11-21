@@ -64,6 +64,8 @@ barplot(vector,
         ylim=c(0,20000),
         horiz = FALSE
         )
+ #from this graph we can see that most number of crimes were committed during the year 2012 and the number of crimes gradually
+ # increased from the year 2010
 ```
 
 <p> Analysing the number of crimes for different crime types</p>
@@ -118,6 +120,7 @@ border="black",
 clockwise=TRUE)
 #legend is given for the graph.
 legend("topright", cex = 0.8, c("Day","Night"),fill=c("red","green"))
+#This pie chart shows that more number of crimes occur during the day rather than the night time.
 ```
 <p> Analysing  the number of crimes based on the locality or its neighbourhood.</p>
 
@@ -145,5 +148,6 @@ barplot(vecNeigh,
         ylim=c(0,7000),
         horiz = FALSE
         )
+#This visualization shows the neighbourhood to the place where most crimes take place.
 ```
 
