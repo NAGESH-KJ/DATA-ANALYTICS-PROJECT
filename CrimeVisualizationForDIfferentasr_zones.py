@@ -107,3 +107,6 @@ for key in d:
 #the most type of crime that was committed was of the type
 print("Type of crime most occurring in commercial zone is ",crime1)
 print(max2)
+
+#To find out the zones in which most crimes were committed , a bar plot was plotted and we observed that most crimes took place in commercial  and Single family resident zones.
+#When the crimes committed for these zones were checked we find that vehicle break in or theft were most prominent type of  crime in Single family resident zone and drugs and alcohol violations were very prominent in commercial zones.
