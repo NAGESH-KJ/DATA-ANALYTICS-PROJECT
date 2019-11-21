@@ -42,4 +42,5 @@ plt.axis("off")
 plt.tight_layout(pad = 0) 
   
 plt.show() 
-
+#A wordcloud analysis was done on desc column  of the dataset , we find that theft and vehicle were the most weighted ones, which shows that most of the crimes  that occurred in the city were related to thefts or  offences that involved  vehicles.
+#The word cloud also shows up alcohol and drugs violations.
