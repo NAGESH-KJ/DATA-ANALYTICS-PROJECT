@@ -16,4 +16,4 @@ NaiveBayesModel - In this file there is an attempt to classify the description i
 
 k_means - It is an attempt to cluster the crimes based on their locations.
 
-further_analysis - Dataset is resampled on monthly basis and then
+further_analysis - Dataset is resampled on monthly basis and then trends in number of crimes is analysed. Also, we try to understand the distribution of crimes in different neighbourhoods. Also, we visualize  the time intervals in which rate of time occurance is more.
