@@ -1,5 +1,10 @@
 # DATA-ANALYTICS-PROJECT
 CRIME DATA ANALYSIS
+
+Link for the dataset : https://data.sandiegodata.org/dataset/san-diego-region-crime-incidents-2007-2013/
+For the project, we have used the 'incidents-100k.csv' file from the above link.
+
+
 As preprocessing part of the dataset , we have implemented Dimensionality Reduction. We have dropped certain columns since someof them are not useful for analysis and some are redundant. ID and city are useless variables.Hour is a redundant variable since it can be derived from time column.
 
 CrimesInSanDiego-contains certain graphs as a part of data visualization. R , Rmd and html files for the same is uploaded. We have used different types of plots i.e, bar chart and pie chart for visualization.
