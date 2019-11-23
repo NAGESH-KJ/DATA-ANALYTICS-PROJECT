@@ -2,6 +2,7 @@
 CRIME DATA ANALYSIS
 
 Link for the dataset : https://data.sandiegodata.org/dataset/san-diego-region-crime-incidents-2007-2013/
+
 For the project, we have used the 'incidents-100k.csv' file from the above link.
 
 
